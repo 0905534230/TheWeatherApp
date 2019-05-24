@@ -50,7 +50,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="365dp" />
+        app:layout_constraintGuide_begin="309dp" />
 
     <EditText
         android:background="@drawable/reg_edittext_style"
@@ -87,20 +87,18 @@
         app:layout_constraintTop_toBottomOf="@+id/regMail" />
 
     <EditText
-        android:background="@drawable/reg_edittext_style"
-        android:hint="ConfirmPassword"
         android:id="@+id/regPasswordconfirm"
         android:layout_width="265dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
+        android:background="@drawable/reg_edittext_style"
         android:ems="10"
+        android:hint="ConfirmPassword"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="440dp" />
+        tools:layout_editor_absoluteY="605dp" />
 
     <Button
         android:id="@+id/regBtn"
@@ -115,10 +113,10 @@
         android:textColor="#ffffff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.545"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/regPasswordconfirm"
-        app:layout_constraintVertical_bias="0.48" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <ProgressBar
         android:id="@+id/regProgressBar"

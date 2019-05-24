@@ -36,7 +36,7 @@ public class RegisterActivity extends AppCompatActivity {
     ImageView ImguserPhoto;
     static int PReqCode = 1;
     static int REQUESTCODE = 1;
-    Uri pickedImgUri;
+    private Uri pickedImgUri;
 
     private EditText userEmail, userPassword, userPasswordConfirm, userName;
     private ProgressBar loadingProgress;
@@ -90,7 +90,7 @@ public class RegisterActivity extends AppCompatActivity {
 
 
 
-        loadingProgress.setVisibility(View.INVISIBLE);
+//        loadingProgress.setVisibility(View.INVISIBLE);
 
 
 
