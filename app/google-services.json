@@ -1,0 +1,77 @@
+{
+  "project_info": {
+    "project_number": "435052000553",
+    "firebase_url": "https://weather-2f052.firebaseio.com",
+    "project_id": "weather-2f052",
+    "storage_bucket": "weather-2f052.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:435052000553:android:5c5940e3d63ed283",
+        "android_client_info": {
+          "package_name": "com.example.weatherapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "435052000553-kg8j776q95khbndnteahvlmo1hrmqg49.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.weatherapp",
+            "certificate_hash": "93c32b9e1244db8efb0d3938a05e1e977f953614"
+          }
+        },
+        {
+          "client_id": "435052000553-blfaqluuoqnd58g6d3emngtug6ldq5v9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTNwtZjD_Ili7j0Q4aGFx19DjZSbje1qQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "435052000553-blfaqluuoqnd58g6d3emngtug6ldq5v9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:435052000553:android:2beb8e065facf93b",
+        "android_client_info": {
+          "package_name": "cz.martykan.forecastie"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "435052000553-blfaqluuoqnd58g6d3emngtug6ldq5v9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTNwtZjD_Ili7j0Q4aGFx19DjZSbje1qQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "435052000553-blfaqluuoqnd58g6d3emngtug6ldq5v9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
