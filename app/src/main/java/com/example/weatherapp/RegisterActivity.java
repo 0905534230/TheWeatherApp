@@ -54,9 +54,9 @@ public class RegisterActivity extends AppCompatActivity {
         userPassword = findViewById(R.id.regPassword);
         userPasswordConfirm = findViewById(R.id.regPasswordconfirm);
         userName = findViewById(R.id.regName);
-//        loadingProgress = findViewById(R.id.regProgressbar);
+        loadingProgress = findViewById(R.id.regProgressBar);
         regBtn = findViewById(R.id.regBtn);
-//        loadingProgress.setVisibility(View.INVISIBLE);
+        loadingProgress.setVisibility(View.INVISIBLE);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -75,7 +75,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                     showMessage("Please verify all field");
                     regBtn.setVisibility(View.VISIBLE);
-//                    loadingProgress.setVisibility(View.VISIBLE);
+                    loadingProgress.setVisibility(View.VISIBLE);
 
                 }else{
 
@@ -90,7 +90,7 @@ public class RegisterActivity extends AppCompatActivity {
 
 
 
-//        loadingProgress.setVisibility(View.INVISIBLE);
+        loadingProgress.setVisibility(View.INVISIBLE);
 
 
 
@@ -121,6 +121,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                             showMessage("Acount created");
                             updateUserInfo(name, pickedImgUri, mAuth.getCurrentUser());
+
                         }
                         else{
                             showMessage("Acount created fail" + task.getException().getMessage());
@@ -171,8 +172,8 @@ public class RegisterActivity extends AppCompatActivity {
 
     private void updateUI() {
 
-        Intent mainActivity = new Intent(getApplicationContext(), MainActivity.class);
-        startActivity(mainActivity);
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(intent);
         finish();
 
     }

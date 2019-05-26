@@ -22,7 +22,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
     private EditText userMail, userPassword;
-    private Button btnLogin;
+    private Button btnLogin,btnRegister, btnResetPassword;
     private ProgressBar loginProgress;
     private FirebaseAuth mAuth;
     private Intent MainActivity;
@@ -40,7 +40,8 @@ public class LoginActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         MainActivity = new Intent(this, com.example.weatherapp.MainActivity.class);
         loginPhoto = findViewById(R.id.login_photo);
-        loginPhoto.setOnClickListener(new View.OnClickListener() {
+        btnRegister = findViewById(R.id.btn_register);
+        btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -51,6 +52,17 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        btnResetPassword = findViewById(R.id.btn_reset_password);
+        btnResetPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent resetPasswordActivity = new Intent(getApplicationContext(),ResetPasswordActivity.class);
+                startActivity(resetPasswordActivity);
+                finish();
+
+            }
+        });
 
         loginProgress.setVisibility(View.INVISIBLE);
         btnLogin.setOnClickListener(new View.OnClickListener() {
@@ -86,6 +98,7 @@ public class LoginActivity extends AppCompatActivity {
                    loginProgress.setVisibility(View.INVISIBLE);
                    btnLogin.setVisibility(View.VISIBLE);
                    uptateUI();
+
                }
                else{
                    btnLogin.setVisibility(View.VISIBLE);
