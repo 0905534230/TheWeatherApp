@@ -14,8 +14,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    private FirebaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +37,7 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
+        auth = FirebaseAuth.getInstance();
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -81,24 +86,33 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_home) {
 
             Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
             startActivity(intent);
             finish();
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.nav_weathermap) {
             Intent intent = new Intent(MainActivity.this , LoginActivity.class);
             startActivity(intent);
             finish();
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_graph) {
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_setting) {
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_register) {
 
-        } else if (id == R.id.nav_send) {
+            Intent intent = new Intent(MainActivity.this , RegisterActivity.class);
+            startActivity(intent);
+            finish();
+
+        } else if (id == R.id.nav_logout) {
+
+            auth.signOut();
+            Intent intent = new Intent(MainActivity.this , LoginActivity.class);
+            startActivity(intent);
+            finish();
 
         }
 
