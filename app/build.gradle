@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'
 
+def lifecycleVersion = '1.1.1'
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -32,6 +33,20 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:16.2.1'
     implementation 'com.google.firebase:firebase-database:16.1.0'
     implementation 'com.google.firebase:firebase-storage:16.0.1'
+
+    //Chart
+    implementation 'com.diogobernardino:williamchart:2.2'
+
+    //Bottom Bar
+    implementation 'com.roughike:bottom-bar:1.4.0.1'
+
+    //ViewHolder
+    implementation "android.arch.lifecycle:extensions:1.1.0"
+    implementation "android.arch.lifecycle:viewmodel:1.1.0"
+    implementation "android.arch.lifecycle:extensions:$lifecycleVersion"
+    annotationProcessor "android.arch.lifecycle:compiler:$lifecycleVersion"
+
+
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'

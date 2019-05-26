@@ -16,6 +16,8 @@ import android.view.MenuItem;
 
 import com.google.firebase.auth.FirebaseAuth;
 
+import org.json.JSONObject;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -65,20 +67,20 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//        // Handle action bar item clicks here. The action bar will
+//        // automatically handle clicks on the Home/Up button, so long
+//        // as you specify a parent activity in AndroidManifest.xml.
+//        int id = item.getItemId();
+//
+//        //noinspection SimplifiableIfStatement
+//        if (id == R.id.action_settings) {
+//            return true;
+//        }
+//
+//        return super.onOptionsItemSelected(item);
+//    }
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
@@ -93,11 +95,14 @@ public class MainActivity extends AppCompatActivity
             finish();
             // Handle the camera action
         } else if (id == R.id.nav_weathermap) {
-            Intent intent = new Intent(MainActivity.this , LoginActivity.class);
+            Intent intent = new Intent(MainActivity.this , MapActivity.class);
             startActivity(intent);
             finish();
 
         } else if (id == R.id.nav_graph) {
+            Intent intent = new Intent(MainActivity.this , GraphActivity.class);
+            startActivity(intent);
+            finish();
 
         } else if (id == R.id.nav_setting) {
 
@@ -119,5 +124,15 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+    public static String getRainString(JSONObject rainObj) {
+        String rain = "0";
+        if (rainObj != null) {
+            rain = rainObj.optString("3h", "fail");
+            if ("fail".equals(rain)) {
+                rain = rainObj.optString("1h", "0");
+            }
+        }
+        return rain;
     }
 }
